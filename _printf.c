@@ -1,24 +1,41 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "main.h"
-
 /**
- * _printf - function my printf
- * @format: string whit format to print
- *
- * Return: number of chars that print
+ * _printf - print all (printf reecreation)
+ * @format: format specifier
+ * Return: count
  */
 int _printf(const char *format, ...)
 {
-	va_list args;
-	int length = 0;
+	va_list arg;
+	int i = 0, count = 0, fun = 0;
 
-	if (format == NULL)
-		return (-1);
-
-	va_start(args, format);
-
-	length = _print_format(format, args);
-	va_end(args);
-	return (length);
+	if (!format || (format[0] == '%' && format[1] == '\0'))
+	return (-1);
+	va_start(arg, format);
+	while (*(format + i) && format)
+	{
+		if (*(format + i) != '%')
+		{
+			_putchar (*(format + i));
+			count++;
+		}
+		if (*(format + i) == '%')
+		{
+			fun = get_func(*(format + (i + 1)), arg);
+			if (fun != 0)
+			{
+				count = count + fun;
+				i = i + 2;
+				continue;
+			}
+			if (*(format + (i + 1)) == '\0')
+			{
+				_putchar(*(format + i));
+				count++;
+			}
+		}
+			i++;
+	}
+	va_end(arg);
+	return (count);
 }
