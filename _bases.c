@@ -69,4 +69,20 @@ void fill_numbase_buff(unsigned int num, unsigned int base,
  *
  * Return: always void.
  */
+void fill_longnumbase_buff(unsigned long int num, unsigned int base,
+				char *buff, int buff_size)
+{
+	int rem, i = buff_size - 1;
 
+	buff[buff_size] = '\0';
+	while (i >= 0)
+	{
+		rem = num % (unsigned long int)base;
+		if (rem > 9)
+			buff[i] = rem + 87;
+		else
+			buff[i] = rem + '0';
+		num /= (unsigned long int)base;
+		i--;
+	}
+}
