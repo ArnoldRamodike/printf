@@ -11,3 +11,11 @@ _printf parses the format string and replaces specifiers with variadic arguments
 The _printf utility returns the number of bytes written on success, and -1 on failure.
 .SH SEE ALSO
 .I 
+builtin(1), echo(1), sh(1), printf(3)
+.SH BUGS
+No known bugs, does not implement all qualities of stdio printf, however.
+.SH IMPROVEMENTS
+Implement width, percision, length specifiers for integers, and the other flags '-' & '0'
+.SH AUTHOR
+Thato Khosa (tb.khosa@gmail.com) 
+Arnold Ramodike (aramodike@singular.co.za).
