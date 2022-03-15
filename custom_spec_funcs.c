@@ -36,6 +36,7 @@ char *get_reverse(va_list args, char *mods)
  *
  * Return: char pointer to newly allocated and rot13'd string
  */
+
 char *get_rot(va_list args, char *mods)
 {
 	int index, length;
@@ -74,6 +75,7 @@ char *get_rot(va_list args, char *mods)
 	ret[length] = '\0';
 	return (ret);
 }
+
 /**
  * get_nonprint_string - gets a pointer to a string in memory containing np's
  * @args: va_list to get string containing non printables
@@ -81,6 +83,7 @@ char *get_rot(va_list args, char *mods)
  *
  * Return: pointer to newly allocated string containing hex's for np's
  */
+
 char *get_nonprint_string(va_list args, char *mods)
 {
 	char *str, *ret;
