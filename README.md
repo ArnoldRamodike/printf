@@ -103,6 +103,55 @@ All together they allow you to manipulate output for various formatting techniqu
 `int_spec_funcs.c` | Integer specific functions returned by `get_string_func()`. Creates memory and copies variable type into a string, doing proper base conversion. | `_bases.c`, `get_string_funcs.c` |
 `hex_spec_funcs.c` | Hexadecimal specific functions returned by `get_string_func()`. Creates memory and copies variable type into string, doing proper base conversion for hex (16). | `_bases.c`, `get_string_funcs.c` |
 
+About Functions
+int _write(char c)
+This function gets a char parameter and writes the parameter to the stdout, the standard output stream.
+
+int _print_a_char (va_list args)
+This function gets a variadic arguments list, traverse the list, prints each character of char type and returns the length of the character.
+
+int _print_a_string (va_list args)
+This function gets a variadic arguments list, traverse the list, prints each string and returns the length of the string.
+
+int _print_a_integer (va_list args)
+This function gets a variadic arguments list, traverse the list, prints each number of int type and returns the length of the integer.
+
+int _print_format (const char *format, va_list args)
+This function gets a format to be printed and a variadic arguments list, next to check if the format is valid or invalid and according with the verification the resulting output is written to the standard output stream and returns the format length.
+
+int _print_spec (char format, va_list args):
+This function gets a format valid to be printed and a variadic arguments list to find the format in the list and selects the appropriate function to execute and writes the format to the standard output stream and returns the length of the valid format.
+
+int _print_invalid_spec (char prev_format, char format, int count)
+This function gets the previous format of the current format, the actual format and the current count of printed characters. Next, the invalid format is written to the standard output stream and returns the length of the invalid format.
+
+void _recursion_integer(int a)
+This function gets an integer and prints the last digit of the number as recursion is applied.
+
+int _validate_char(char _type)
+Gets a type and checks if the passed parameter is present in a structure of valid conversion specifiers. Next, returns if the parameter is valid or invalid.
+
+Return Value
+Upon successful return, the _printf() function return the number of characters printed (excluding the null byte used to end output to strings).
+
+If an output error is encountered, a negative value is returned.
+
+Examples
+#include "holberton.h"
+
+_printf("Hello Holberton"); // the output will be: Hello Holberton
+
+_printf("%c", 'H'); // the output will be: H
+
+_printf("%s", "Hello Holberton"); // the output will be: Hello Holberton
+
+_printf("%!\n"); // the output will be '%!'
+
+_printf("Complete the sentence: You %s nothing, Jon Snow.\n", "know"); // the output will be: Complete the sentence: You know nothing, Jon Snow.
+
+_printf("% s", "Hello"); // the output will be: Hello
+
+_printf("% k"); // the output will be: % k
 
 ## References 📖
  - “Printf.” _Cplusplus.com_, www.cplusplus.com/reference/cstdio/printf/.
