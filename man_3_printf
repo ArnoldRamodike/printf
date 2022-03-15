@@ -64,14 +64,14 @@ To print:
 .RS 3
 .B #include "main.h"
 .PP
-_printf("Hello Holberton");
-.B // the output will be 'Hello Holberton'
+_printf("Hello South Africa");
+.B // the output will be 'Hello South Africa'
 .PP
 _printf("%c", 'H');
 .B // the ouput will be 'H'
 .PP
-_printf("%s", "Hello Holberton");
-.B // the output will be 'Hello Holberton'
+_printf("%s", "Hello South Africa");
+.B // the output will be 'Hello South Africa'
 .PP
 _printf("%!\\n");
 .B // the output will be '%!'
@@ -86,4 +86,4 @@ _printf("%        k");
 .B // the output will be '% k'
 .RE
 .SH AUTHOR
-Thato Khosa and Arnold Ramodike.
+Thato Khosa (tb.khosa@gmail.com) and Arnold Ramodike (aramodike@singular.co.za).

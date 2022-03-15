@@ -2,7 +2,7 @@ Our own printf function.
 
 _printf - formatted output conversion
 
-#include "holberton.h" int _printf(const char format , ...);
+#include "main.h" int _printf(const char format , ...);
 
 Description
 The _printf() function produce output according to a format as described below. Also, write output to stdout, the standard output stream.
@@ -53,13 +53,13 @@ Upon successful return, the _printf() function return the number of characters p
 If an output error is encountered, a negative value is returned.
 
 Examples
-#include "holberton.h"
+#include "main.h"
 
-_printf("Hello Holberton"); // the output will be: Hello Holberton
+_printf("Hello South Africa"); // the output will be: Hello South Africa
 
 _printf("%c", 'H'); // the output will be: H
 
-_printf("%s", "Hello Holberton"); // the output will be: Hello Holberton
+_printf("%s", "Hello South Africa"); // the output will be: Hello South Africa
 
 _printf("%!\n"); // the output will be '%!'
 
